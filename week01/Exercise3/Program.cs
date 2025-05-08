@@ -5,7 +5,7 @@ class Program
 {
     static void Main(string[] args)
     {   
-        while (true)
+        while (true) // Keeps loop infinite until broken
         {
             // Generate random number
             Random randomGenerator = new Random();
