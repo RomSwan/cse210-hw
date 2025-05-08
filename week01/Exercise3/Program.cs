@@ -4,15 +4,21 @@ using System.Diagnostics.Tracing;
 class Program
 {
     static void Main(string[] args)
-    {
+    {   // Generate random number
         Random randomGenerator = new Random();
         int number = randomGenerator.Next(1, 101);
 
-        while (true)
-        {
+        // Sets the guess counter
+        int guesses = 0;
+
+        while (true) // Keeps the loop infinite
+        {   // User input
             Console.Write("Enter your guess: ");
             string input2 = Console.ReadLine();
             int guess = int.Parse(input2);
+
+            // Adds to guess counter
+            guesses += 1;
 
             if (guess > number)
             {
@@ -22,10 +28,10 @@ class Program
             {
                 Console.WriteLine("Higher.");
             }
-            else 
-            {
-                Console.WriteLine("Correct!");
-                break;
+            else
+            {   // They successfully guess the correct number
+                Console.WriteLine($"Correct! It took you {guesses} guesses.");
+                break; // Breaks loop, which ends the program.
             }
         }
     }
