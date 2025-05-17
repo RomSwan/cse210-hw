@@ -27,6 +27,9 @@ class Program
                 Console.Write("Enter date: ");
                 journalEntry._date = Console.ReadLine();
 
+                Console.Write("Enter the weather: ");
+                journalEntry._weather = Console.ReadLine();
+
                 PromptGenerator randomPrompt = new PromptGenerator();
                 journalEntry._prompt = randomPrompt.GetPrompt();
                 Console.WriteLine(journalEntry._prompt);
@@ -46,7 +49,7 @@ class Program
             {
                 foreach (Journal entry in journalEntryList)
                 {
-                    Console.WriteLine($"Date: {entry._date}");
+                    Console.WriteLine($"Date: {entry._date} -{entry._weather}-");
                     Console.WriteLine($"({entry._prompt})");
                     Console.WriteLine($"'{entry._response}'");
                     Console.WriteLine();

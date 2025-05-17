@@ -3,6 +3,7 @@ public class Journal
     public string _prompt;
     public string _response;
     public string _date;
+    public string _weather;
 
     List<Journal> journal = new List<Journal>();
 
@@ -12,7 +13,7 @@ public class Journal
         {
             foreach (Journal entry in journal)
             {
-                outputFile.WriteLine($"{entry._date},{entry._prompt},{entry._response}");
+                outputFile.WriteLine($"{entry._date},{entry._weather},{entry._prompt},{entry._response}");
             }
         }
     }
@@ -28,8 +29,9 @@ public class Journal
 
             Journal pastEntry = new Journal();
             pastEntry._date = parts[0];
-            pastEntry._prompt = parts[1];
-            pastEntry._response = parts[2];
+            pastEntry._weather = parts[1];
+            pastEntry._prompt = parts[2];
+            pastEntry._response = parts[3];
 
             pastEntries.Add(pastEntry);
 
