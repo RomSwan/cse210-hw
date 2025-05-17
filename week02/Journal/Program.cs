@@ -1,6 +1,7 @@
 using System;
 using System.Security.Cryptography.X509Certificates;
 
+// Added an option to enter the weather as well.
 class Program
 {
     static void Main(string[] args)
