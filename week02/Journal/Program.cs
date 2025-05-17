@@ -35,8 +35,6 @@ class Program
                 journalEntry._response = Console.ReadLine();
 
                 journalEntryList.Add(journalEntry);
-
-                Journal.SaveToFile(journalEntryList);
                 Console.WriteLine();
                 Console.WriteLine("Good job!");
                 Console.WriteLine();
