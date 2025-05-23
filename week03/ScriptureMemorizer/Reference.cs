@@ -5,7 +5,7 @@ public class Reference
     private int _verse;
     private int _endVerse;
 
-    public Reference(string book, int chapter, int verse)
+    public Reference(string book, int chapter, int verse) // If only 1 verse
     {
         _book = book;
         _chapter = chapter;
@@ -13,7 +13,7 @@ public class Reference
         _endVerse = -1;
     }
 
-    public Reference(string book, int chapter, int startVerse, int endVerse)
+    public Reference(string book, int chapter, int startVerse, int endVerse) // If multiple verses
     {
         _book = book;
         _chapter = chapter;

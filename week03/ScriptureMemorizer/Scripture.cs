@@ -6,8 +6,9 @@ public class Scripture
     public Scripture(Reference reference, string text)
     {
         _reference = reference;
-        _words = new List<Word>();
+        _words = new List<Word>(); // List of words
 
+        // Seperate and store the words from the verse
         string[] Words = text.Split(' ');
         foreach (string word in Words)
         {
@@ -17,12 +18,13 @@ public class Scripture
 
     public void HideRandomWords(int wordsToHide)
     {
-        Random rand = new Random();
+        Random random = new Random();
         int wordsHidden = 0;
 
+        // Hide words until all are hidden
         while (wordsHidden < wordsToHide)
         {
-            int index = rand.Next(_words.Count);
+            int index = random.Next(_words.Count);
 
             if (_words[index].IsHidden() == false)
             {
@@ -38,8 +40,9 @@ public class Scripture
     }
 
     public string GetDisplayText()
-    {
+    {   // Display the reference
         string display = _reference.GetDisplayText() + "\n";
+        // Display the text
         foreach (Word word in _words)
         {
             display += word.GetDisplayText() + " ";
@@ -47,7 +50,7 @@ public class Scripture
         return display.Trim();
     }
 
-    public bool IsCompletelyHidden()
+    public bool IsCompletelyHidden() // Once all words are hidden, end the program
     {
         foreach (Word word in _words)
         {
