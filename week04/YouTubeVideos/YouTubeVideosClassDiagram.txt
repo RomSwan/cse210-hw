@@ -1,0 +1,17 @@
+~~~~~Comment~~~~~
+_username: string
+_comment: string
+-----------------
+Comment(username: string, comment: string)
+DisplayComment(): string
+
+~~~~~Video~~~~~
+_title: string
+_author: string
+_length: int
+_comments: List<Comment>
+---------------
+Video(title: string, author: string, length: int)
+AddComment(comment: Comment): void
+GetCommentTotal(): int
+DisplayVideoInfo(): void
