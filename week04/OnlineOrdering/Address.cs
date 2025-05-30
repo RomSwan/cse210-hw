@@ -13,7 +13,7 @@ public class Address
         _country = country;
     }
 
-    public bool CheckIfUSA() //Double check this later
+    public bool CheckIfUSA()
     {
         return _country.ToUpper() == "USA";
     }
