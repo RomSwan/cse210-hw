@@ -5,6 +5,7 @@ _comment: string
 Comment(username: string, comment: string)
 DisplayComment(): string
 
+
 ~~~~~Video~~~~~
 _title: string
 _author: string
