@@ -23,7 +23,7 @@ class Program
 
         Video video4 = new Video("How to Cook Chicken", "Ugochukwu Febechukwu", 200);
         video4.AddComment(new Comment("boldamericanhoorah", "I love chicken."));
-        video4.AddComment(new Comment("MVP1", "Have you ever considerend doing a mukbang?"));
+        video4.AddComment(new Comment("MVP1", "Have you ever considered doing a mukbang?"));
         video4.AddComment(new Comment("GENHISKHAN", "I am so glad this turned up in my recommended!"));
 
         videos.Add(video1);
