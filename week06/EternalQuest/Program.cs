@@ -1,7 +1,7 @@
 using System;
 
 
-/*Make a loading screen for each time you save or load a file.*/
+/*Added a level up system in GoalManager with the methods UpdateLevel() and DisplayRemainingPoints()*/
 
 class Program
 {

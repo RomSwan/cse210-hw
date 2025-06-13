@@ -5,6 +5,8 @@ public class GoalManager
 {
     private List<Goal> _goals = new List<Goal>();
     private int _score = 0;
+    private int _level = 1; /*Added a level up system*/
+    private int _requiredScore = 100; /*Added a way to display the remaing points needed to level up*/
 
     public GoalManager() { }
 
@@ -64,7 +66,22 @@ public class GoalManager
 
     public void DisplayUserScore()
     {
-        Console.WriteLine($"\nCurrent Score: {_score}");
+        Console.WriteLine($"\nLevel: ({_level})  Current Score: {_score}");
+        Console.WriteLine($"Points needed for next level: {DisplayRemainingPoints()}\n");
+    }
+
+    private void UpdateLevel() /*Added a level up system*/
+    {
+        while (_score >= _requiredScore)
+        {
+            _level += 1;
+            _requiredScore += 50 + (50 * _level);
+        }
+    }
+
+    private int DisplayRemainingPoints() /*Added a way to display the remaing points needed to level up*/
+    {
+        return _requiredScore - _score;
     }
 
     public void ListGoalNames()
@@ -137,6 +154,7 @@ public class GoalManager
 
     public void RecordEvent()
     {
+        Console.WriteLine("GOALS:");
         ListGoalNames();
         Console.WriteLine("\nWhich goal did you complete?");
         Console.Write(">");
@@ -169,6 +187,7 @@ public class GoalManager
             }
         }
 
+        UpdateLevel();
         DisplayUserScore();
     }
 
@@ -252,6 +271,8 @@ public class GoalManager
         }
 
         Console.Clear();
+        Console.WriteLine("--GOALS LOADED--");
+        ListGoalNames();
         Console.WriteLine("--GOALS LOADED--\n");
     }
 }
